@@ -7,10 +7,8 @@ public class carController : MonoBehaviour {
 
 	// Car controls
     float carSpeed = 10;
-    float maxPos = 2.5f;
     Vector3 position;
-
-    
+    public UI ui;
     
 	void Start ()
 	{
@@ -20,8 +18,8 @@ public class carController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-	    position.x += Input.GetAxis("Horizontal") * carSpeed * Time.deltaTime; // Time.deltaTime -> time took to render the last frame
-	    position.x = Mathf.Clamp(position.x, -2.5f, 2.5f); // clamps the position of car 
+        position.x += Input.GetAxis("Horizontal") * carSpeed * Time.deltaTime; // Time.deltaTime -> time took to render the last frame
+        position.x = Mathf.Clamp(position.x, -2.5f, 2.5f); // clamps the position of car 
 	    transform.position = position;
     }
 
@@ -29,6 +27,7 @@ public class carController : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("obstacle"))
         {
+            ui.collision();
             Destroy(col.gameObject);
         }
     }

@@ -61,9 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\destroyer.cs" />
+    <Compile Include="Assets\Scripts\bot.cs" />
     <Compile Include="Assets\Scripts\carController.cs" />
     <Compile Include="Assets\Scripts\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\obstacle1.cs" />
     <Compile Include="Assets\Scripts\obstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\TrackMove.cs" />

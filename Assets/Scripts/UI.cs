@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour {
@@ -25,17 +26,25 @@ public class UI : MonoBehaviour {
 	    ScoreText.text = "Score: " + score;
 	    timeText.text = "Time: " + time;
 
-	    if (time == 120)
+        if (time >= 210)
 	    {
 	        Time.timeScale = 0;
-	    }
-        
-	}
+	        PlayerPrefs.SetFloat("Score", score);
+	        PlayerPrefs.SetFloat("Time", time);
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        }
+
+    }
 
     void updateScore()
     {
         score += 3;
         time += 1;
     }
-    
+
+    public void collision()
+    {
+        score -= 8;
+        time += 3;
+    }
 }

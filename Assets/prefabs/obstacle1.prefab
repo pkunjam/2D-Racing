@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114629113789265708}
   - component: {fileID: 61726065404603666}
   - component: {fileID: 50461028909326024}
+  - component: {fileID: 61012430193390746}
   m_Layer: 0
   m_Name: obstacle1
   m_TagString: obstacle
@@ -63,6 +64,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61012430193390746
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888488898434058}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.054005384, y: -1.1949472}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9007359, y: 3.6698942}
+  m_EdgeRadius: 0
 --- !u!61 &61726065404603666
 BoxCollider2D:
   m_ObjectHideFlags: 1
