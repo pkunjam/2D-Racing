@@ -7,44 +7,52 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour {
 
 	// Use this for initialization
-    public Text ScoreText;
+    public Text Score_p1;
+    public Text Score_p2;
     public Text timeText;
-    public int score;
+    public int P1_score;
+    public int P2_score;
     public int time;
 
 	void Start ()
 	{
-	    score = 0;
-	    time = 0;
-	    InvokeRepeating("updateScore", 1.0f, 0.5f);
+	    P1_score = 0;
+        P2_score = 0;
+        time = 0;
+	    InvokeRepeating("updateTime", 1.0f, 1.0f);
        
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    ScoreText.text = "Score: " + score;
-	    timeText.text = "Time: " + time;
+	    Score_p1.text = "Score P1: " + P1_score;
+        Score_p2.text = "Score P2: " + P2_score;
+        timeText.text = "Time: " + time;
 
-        if (time >= 210)
+        if (time >= 10)
 	    {
 	        Time.timeScale = 0;
-	        PlayerPrefs.SetFloat("Score", score);
-	        PlayerPrefs.SetFloat("Time", time);
+	        PlayerPrefs.SetFloat("Player 1 - Score", P1_score);
+            PlayerPrefs.SetFloat("Player 2 - Score", P2_score);
+            PlayerPrefs.SetFloat("Time", time);
             SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         }
 
     }
 
-    void updateScore()
+    void updateTime()
     {
-        score += 3;
         time += 1;
     }
 
-    public void collision()
+    public void P1_collision()
     {
-        score -= 8;
-        time += 3;
+        P1_score += 5;
+    }
+
+    public void P2_collision()
+    {
+        P2_score += 5;
     }
 }
