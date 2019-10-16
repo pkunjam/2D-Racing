@@ -27,7 +27,8 @@ public class carController : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("obstacle"))
         {
-            ui.collision();
+            ui.P1_collision();
+            ui.P2_collision();
             Destroy(col.gameObject);
         }
     }
