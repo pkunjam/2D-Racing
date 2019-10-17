@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\code\networking\NetworkClient.cs" />
+    <Compile Include="Assets\code\Uitlity\MethodExtensions.cs" />
     <Compile Include="Assets\destroyer.cs" />
     <Compile Include="Assets\Scripts\API.cs" />
     <Compile Include="Assets\Scripts\bot.cs" />
